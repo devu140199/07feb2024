@@ -4,57 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Nav bar...🫠🫠🫠</title>
+    <title>Menu bar...🫠🫠🫠</title>
     <style>
         body{
-            background-image: url(./image/bg.png);
             font-family: Arial, Helvetica, sans-serif;
+            background-image: url(./image/bg.png);
         }
-       .navbar{
-        width: 1280px;
-        height: 50px;
-        background: #333;
-        margin: 20px auto;
-       }
-       .navbar > ul{
-        list-style: none;
-       }
-       .navbar > ul > li{
-        float: left;
-       }
-       .navbar > ul > li > a{
-        display: inline-block;
-        text-decoration: none;
-        height: 50px;
-        line-height: 50px;
-        padding: 0px 20px;
-        color: #fff;
-       }
-       .active{
-        background: #fd6a02;
-       }
-       ul > li:hover a{
-        background: #fd6a02;
-       }
-       .comimg{
-        background-image: url(./image/ufo.png);
-        background-repeat: no-repeat;
-        background-size: 18px;
-        background-position: 0px 13px;
-       }
+        .menubar{
+            width: 1280px;
+            height: 50px;
+            background: #333333;
+            margin: 12.5px auto;
+        }
+        .menu > li{
+            list-style: none;
+            float: left;
+        }
+        .menu > li > a{
+            text-decoration: none;
+            color: #fff;
+            display: inline-block;
+            height: 16px;
+            font-size: 0.8rem;
+            /* background: #ff6347; */
+            padding: 17px;
+        }
+        .menu > li:hover > a{
+            background: #ff6347;
+        }
+        .menu{
+            position: relative;
+        }
+        .ufoimg{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 30px;
+        }
+        .active{
+            background: #ff6347;
+        }
+        .submenu{
+            width: 250px;
+            height: 300px;
+            padding-left: 0px;
+            position: absolute;
+            display: none;
+        }
+        .submenu > li{
+            list-style: none;
+        }
+        .submenu > li > a{
+            display: block;
+            text-decoration: none;
+            width: 250px;
+            height: 60px;
+            line-height: 60px;
+            padding-left: 15px;
+            color: #333;
+            background-color: #fff;
+            
+        }
+        .menu li:hover .submenu{
+            display: block;
+        }
+        .submenu1{
+            position: absolute;
+            top: 60px;
+            left: 250px;
+            padding-left: 15px;
+            display: none !important;
+        }
+        .menu > li > .submenu > li > a:hover{
+            background-color: #ff6347;
+            color:#fff;
+        } 
+        .submenu > li:hover .submenu1{
+            display: block !important;
+        }
+        .submenu1 > li > a:hover{
+            background: #ff6347;
+        }
+        .submenu2{
+            position: absolute;
+            top: 184px;
+            right: 265px;
+            display: none !important;
+        }
+        .submenu > li:hover .submenu2{
+            display: block !important;
+        }
+        .submenu2 > li > a:hover{
+            background: #ff6347;
+        } 
     </style>
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="menubar">
         <ul class="menu">
             <li>
-                <a href="#" class="comimg">Company Logo</a>
+                <a href="#"><img class="ufoimg" src="./image/ufo.png" alt="logo">Company Logo</a>
             </li>
             <li>
                 <a href="#" class="active">Active</a>
             </li>
             <li>
                 <a href="#">Drop Down <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="submenu">
+                    <li>
+                        <a href="#">item 1</a>
+                    </li>
+                    <li>
+                        <a href="#">item left side</a>
+                        <ul class="submenu submenu1">
+                            <li><a href="#">items</a></li>
+                            <li><a href="#">items</a></li>
+                            <li><a href="#">items</a></li>
+                            <li><a href="#">items</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">item 3</a>
+                    </li>
+                    <li>
+                        <a href="#">item right side</a>
+                        <ul class="submenu submenu2">
+                            <li><a href="#">items</a></li>
+                            <li><a href="#">items</a></li>
+                            <li><a href="#">items</a></li>
+                            <li><a href="#">items</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">item 5</a>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a href="#">Mega Menu <i class="fa-solid fa-chevron-down"></i></a>
